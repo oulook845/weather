@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨</title>
+    <link rel="stylesheet" href="./css/import.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="bg_wrap">
+        <div class="bgImg bg_sunny">
+          <img src="./images/bg_sunny.png" />
+        </div>
+        <div class="bgImg bg_cloudy">
+          <img src="./images/bg_cloudy.png" />
+        </div>
+      </div>
+      <main id="main">
+        <div id="left_area">
+          <div id="today_weather">
+            <div id="currentIcon"></div>
+            <div id="city_select">
+              <div class="currentCity">
+                <p>
+                  <i class="locationIcon"></i>
+                  <span>Korea, Seoul</span>
+                </p>
+              </div>
+              <label id="citySearch_area" for="surchCity">
+                <i class="SearchIcon"></i>
+                <input id="citySurch" type="text" placeholder="Search city...." />
+              </label>
+            </div>
+            <div id="weatherInfo">
+              <div class="currentTemp"><span>26</span>°C</div>
+              <div class="bothTemp">
+                <p>High :<span>27</span></p>
+                <p>Low :<span>10</span></p>
+              </div>
+              <div class="currentWeather">
+                <span>Cloudy</span>
+              </div>
+            </div>
+          </div>
+          <div id="date_weather">
+            <div class="date_wrap">
+              <span id="todayDate">10 May, 2025</span>
+              <span id="todayWeek">Friday</span>
+            </div>
+            <div class="weather">
+              <ul class="weekList">
+                <li class="today">
+                  <span class="weekTxt">FRI</span>
+                  <div class="icon">
+                    <span class="cloudy"></span>
+                  </div>
+                  <div class="Celsius"><span>11</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">SAT</span>
+                  <div class="icon">
+                    <span class="rain"></span>
+                  </div>
+                  <div class="Celsius"><span>10</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">SUN</span>
+                  <div class="icon">
+                    <span class="thunder"></span>
+                  </div>
+                  <div class="Celsius"><span>15</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">MON</span>
+                  <div class="icon">
+                    <span class="cloudy"></span>
+                  </div>
+                  <div class="Celsius"><span>11</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">TUE</span>
+                  <div class="icon">
+                    <span class="rain"></span>
+                  </div>
+                  <div class="Celsius"><span>10</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">WED</span>
+                  <div class="icon">
+                    <span class="thunder"></span>
+                  </div>
+                  <div class="Celsius"><span>12</span>°C</div>
+                </li>
+                <li>
+                  <span class="weekTxt">THU</span>
+                  <div class="icon">
+                    <span class="whindy"></span>
+                  </div>
+                  <div class="Celsius"><span>10</span>°C</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="right_area">
+          <div id="hourForecast">
+            <h3><i class="timeIcon"></i> 24-hour forecast</h3>
+            <div class="canvas_wrap">
+              <canvas></canvas>
+            </div>
+            <ul class="time_list">
+              <li>
+                <div class="cloudy"></div>
+                <span>now</span>
+              </li>
+              <li>
+                <div class="cloudy"></div>
+                <span>22 : 00</span>
+              </li>
+              <li>
+                <div class="rain"></div>
+                <span>00 : 00</span>
+              </li>
+              <li>
+                <div class="thunder"></div>
+                <span>02 : 00</span>
+              </li>
+              <li>
+                <div class="thunder"></div>
+                <span>04 : 00</span>
+              </li>
+              <li>
+                <div class="rain"></div>
+                <span>06 : 00</span>
+              </li>
+              <li>
+                <div class="windy"></div>
+                <span>08 : 00</span>
+              </li>
+            </ul>
+          </div>
+          <div id="weatherInfo">
+            <div id="weatherElems">
+              <h3 class="title"><span>Weather Elements</span></h3>
+              <ul class="elemList column">
+                <li class="dragger list-group-item" draggable="true">
+                  <figure>
+                    <img src="./images/weatherElement/weatherElem_sunrise.svg" alt="일출" />
+                    <figcaption>Sunrise</figcaption>
+                  </figure>
+                  <p>06:00</p>
+                  <button class="moveBtn"><span class="txt_hidden">이동</span></button>
+                </li>
+                <li class="dragger list-group-item" draggable="true">
+                  <figure>
+                    <img src="./images/weatherElement/weatherElem_sunset.svg" alt="일몰" />
+                    <figcaption>Sunset</figcaption>
+                  </figure>
+                  <p>18:00</p>
+                  <button class="moveBtn"><span class="txt_hidden">이동</span></button>
+                </li>
+                <li class="dragger list-group-item" draggable="true">
+                  <figure>
+                    <img src="./images/weatherElement/weatherElem_precipitation.svg" alt="강수량" />
+                    <figcaption>Precip</figcaption>
+                  </figure>
+                  <p>20%</p>
+                  <button class="moveBtn"><span class="txt_hidden">이동</span></button>
+                </li>
+                <li class="dragger list-group-item" draggable="true">
+                  <figure>
+                    <img src="./images/weatherElement/weatherElem_windspeed.svg" alt="풍량" />
+                    <figcaption>WindSpd</figcaption>
+                  </figure>
+                  <p>0.8km/hr</p>
+                  <button class="moveBtn"><span class="txt_hidden">이동</span></button>
+                </li>
+              </ul>
+            </div>
+            <div id="weatherAlerts">
+              <h3 class="title"><span>Weather Alerts</span></h3>
+              <div class="alertBox">
+                <ul class="elemList">
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      <a href="#">
+                        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나
+                        시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실질적인 문장
+                        내용이 채워지기 전에 디자인 프로젝트 모형의 채움 글로도 이용된다.
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- script -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>

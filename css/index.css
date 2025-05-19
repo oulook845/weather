@@ -1,0 +1,369 @@
+@charset "UTF-8";
+#wrap {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#fff 30%, #e2e2ff 90%);
+  position: relative;
+}
+#wrap #bg_wrap {
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  position: relative;
+  overflow: hidden;
+}
+#wrap #bg_wrap .bgImg {
+  position: absolute;
+}
+#wrap #bg_wrap .bgImg.bg_sunny {
+  left: 0;
+  bottom: -25%;
+  transform-origin: center;
+  animation: infinityRotate 30s linear infinite;
+}
+@keyframes infinityRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#wrap #bg_wrap .bgImg.bg_cloudy {
+  left: 0;
+  bottom: 0;
+}
+#wrap #bg_wrap .bgImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#wrap #main {
+  width: 83.33%;
+  max-width: 1600px;
+  height: 770px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#wrap #main #left_area {
+  width: 620px;
+}
+#wrap #main #left_area #today_weather #currentIcon {
+  width: 150px;
+  height: 85px;
+  background-image: url(../images/weatherSvg/svg_cloudy.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#wrap #main #left_area #today_weather #city_select {
+  margin-top: 50px;
+}
+#wrap #main #left_area #today_weather #city_select .currentCity p {
+  font-size: 24px;
+  color: var(--main-color);
+}
+#wrap #main #left_area #today_weather #city_select .currentCity p span {
+  margin-left: 10px;
+}
+#wrap #main #left_area #today_weather #city_select label#citySearch_area {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+  padding: 0 20px;
+  background: rgba(131, 152, 234, 0.4);
+  border: 2px solid #8398ea;
+  border-radius: 50px;
+}
+#wrap #main #left_area #today_weather #city_select label#citySearch_area input#citySurch {
+  color: #fff;
+}
+#wrap #main #left_area #today_weather #city_select label#citySearch_area input#citySurch::placeholder {
+  font-size: 14px;
+  color: inherit;
+}
+#wrap #main #left_area #today_weather #weatherInfo {
+  color: var(--main-color);
+  margin-top: 30px;
+}
+#wrap #main #left_area #today_weather #weatherInfo .currentTemp {
+  display: flex;
+  align-items: first baseline;
+  font-size: 40px;
+}
+#wrap #main #left_area #today_weather #weatherInfo .currentTemp span {
+  font-size: 105px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+#wrap #main #left_area #today_weather #weatherInfo .bothTemp {
+  display: flex;
+  gap: 10px;
+}
+#wrap #main #left_area #today_weather #weatherInfo .bothTemp p {
+  font-size: 14px;
+}
+#wrap #main #left_area #today_weather #weatherInfo .currentWeather {
+  font-size: 14px;
+}
+#wrap #main #left_area #date_weather .date_wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  color: var(--main-color);
+}
+#wrap #main #left_area #date_weather .date_wrap #todayDate {
+  font-size: 14px;
+}
+#wrap #main #left_area #date_weather .date_wrap #todayWeek {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+#wrap #main #left_area #date_weather .weather {
+  margin-top: 30px;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList {
+  display: flex;
+  gap: 15px;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li {
+  width: 75px;
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  border-radius: 25px;
+  background-color: var(--sub-color);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li.today {
+  background-color: var(--main-color);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .weekTxt {
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid #afbfff;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(../images/weatherIcon200x200/weatherIcon_cloudy.png) no-repeat center/cover;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.cloudy {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_cloudy.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.sunny {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_sunny.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.windy {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_windy.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.thunder {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_thunder.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.snow {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_snow.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .icon span.rain {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_rain.png);
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .Celsius {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3px;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+#wrap #main #left_area #date_weather .weather ul.weekList li .Celsius span {
+  font-size: 24px;
+  font-weight: 400;
+}
+#wrap #main #right_area {
+  width: 880px;
+}
+#wrap #main #right_area #hourForecast {
+  width: 100%;
+  height: 250px;
+  border-radius: 40px;
+  padding-top: 15px;
+  background-color: var(--main-color);
+}
+#wrap #main #right_area #hourForecast h3 {
+  color: #fff;
+  font-size: 15px;
+  padding-left: 50px;
+}
+#wrap #main #right_area #hourForecast .canvas_wrap {
+  width: 100%;
+  height: calc(100% - 80px);
+}
+#wrap #main #right_area #hourForecast .canvas_wrap canvas {
+  width: 100%;
+}
+#wrap #main #right_area #hourForecast ul.time_list {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+#wrap #main #right_area #hourForecast ul.time_list li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  position: relative;
+}
+#wrap #main #right_area #hourForecast ul.time_list li:first-child:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 70px;
+  border: 1px dashed #fff;
+  position: absolute;
+  left: 50%;
+  bottom: 45px;
+}
+#wrap #main #right_area #hourForecast ul.time_list li div {
+  width: 30px;
+  height: 30px;
+  background: url(../images/weatherIcon200x200/weatherIcon_cloudy.png) no-repeat center/cover;
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.cloudy {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_cloudy.png);
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.sunny {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_sunny.png);
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.windy {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_windy.png);
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.thunder {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_thunder.png);
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.snow {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_snow.png);
+}
+#wrap #main #right_area #hourForecast ul.time_list li div.rain {
+  background-image: url(../images/weatherIcon200x200/weatherIcon_rain.png);
+}
+#wrap #main #right_area #weatherInfo {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+#wrap #main #right_area #weatherInfo > div {
+  flex: 1;
+  height: 500px;
+  color: var(--main-color);
+  border-radius: 40px;
+  background-color: #fff;
+}
+#wrap #main #right_area #weatherInfo > div h3.title {
+  font-size: 24px;
+}
+#wrap #main #right_area #weatherInfo > div h3.title span {
+  border-bottom: 3px solid var(--main-color);
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems {
+  padding: 20px 45px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList {
+  margin-top: 40px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li:not(:last-child) {
+  border-bottom: 1px solid #b9c3f4;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li figure {
+  width: 70px;
+  text-align: center;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li figure img {
+  width: 40px;
+  height: 40px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: -20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li button.moveBtn {
+  width: 20px;
+  height: 7px;
+  background: url(../../images/moveBtn.png) no-repeat center/cover;
+  position: relative;
+  cursor: pointer;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts {
+  padding: 20px 35px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox {
+  max-height: 350px;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox::-webkit-scrollbar {
+  width: 5px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox::-webkit-scrollbar-track {
+  background-color: #e2e2ff;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox ul.elemList li:not(:first-child) {
+  margin-top: 30px;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox ul.elemList li h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox ul.elemList li p {
+  width: 320px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2; /* 표시할 줄 수 */
+  text-overflow: ellipsis;
+}
+#wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox ul.elemList li p:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+body {
+  font-family: "Pretendard";
+}
+
+:root{
+    --main-color:#8398EA;
+    --sub-color:#AFBFFF;
+}
+
+/* icon */
+.locationIcon{
+    display: inline-block;
+    width: 20px;
+    height: 27px;
+    background: url(../images/location_icon.svg)no-repeat center / cover;
+}
+.SearchIcon{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../images/search_icon.svg)no-repeat center / cover;
+}
+.timeIcon{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../images/time_icon.svg)no-repeat center / cover;
+}
+
+/* 텍스트 숨기기 *부모설정 필요* */
+.txt_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
