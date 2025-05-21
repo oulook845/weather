@@ -409,7 +409,7 @@
 #wrap #main #right_area #weatherInfo > div#weatherElems ul.elemList li button.moveBtn {
   width: 20px;
   height: 7px;
-  background: url(../../images/moveBtn.png) no-repeat center/cover;
+  background: url(../images/moveBtn.png) no-repeat center/cover;
   position: relative;
   cursor: pointer;
 }
