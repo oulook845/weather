@@ -121,7 +121,7 @@
 #wrap #main #left_area #today_weather #city_select .currentCity p span {
   margin-left: 10px;
 }
-#wrap #main #left_area #today_weather #city_select label#citySearch_area {
+#wrap #main #left_area #today_weather #city_select #citySearch_area {
   display: flex;
   align-items: center;
   gap: 25px;
@@ -134,10 +134,10 @@
   border: 2px solid #8398ea;
   border-radius: 50px;
 }
-#wrap #main #left_area #today_weather #city_select label#citySearch_area input#citySurch {
+#wrap #main #left_area #today_weather #city_select #citySearch_area input#citySurch {
   color: #fff;
 }
-#wrap #main #left_area #today_weather #city_select label#citySearch_area input#citySurch::placeholder {
+#wrap #main #left_area #today_weather #city_select #citySearch_area input#citySurch::placeholder {
   font-size: 14px;
   color: inherit;
 }
@@ -414,6 +414,7 @@
   cursor: pointer;
 }
 #wrap #main #right_area #weatherInfo > div#weatherAlerts {
+  display: none;
   padding: 20px 35px;
 }
 #wrap #main #right_area #weatherInfo > div#weatherAlerts .alertBox {

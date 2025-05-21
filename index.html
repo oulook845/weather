@@ -25,38 +25,42 @@
               <div class="currentCity">
                 <p>
                   <i class="locationIcon"></i>
-                  <span>Korea, Seoul</span>
+                  <span id="country"></span>,<span id="city"></span>
                 </p>
               </div>
-              <label id="citySearch_area" for="surchCity">
+              <div id="citySearch_area" for="surchCity">
                 <i class="SearchIcon"></i>
                 <input id="citySurch" type="text" placeholder="Search city...." />
-              </label>
+              </div>
             </div>
             <div id="weatherInfo">
-              <div class="currentTemp"><span>26</span>°C</div>
+              <div class="currentTemp"><span id="temp"></span>°C</div>
               <div class="bothTemp">
-                <p>High :<span>27</span></p>
-                <p>Low :<span>10</span></p>
+                <p>High :<span id="maxTemp"></span></p>
+                <p>Low :<span id="minTemp"></span></p>
               </div>
               <div class="currentWeather">
-                <span>Cloudy</span>
+                <span id="des"></span>
               </div>
             </div>
           </div>
           <div id="date_weather">
             <div class="date_wrap">
-              <span id="todayDate">10 May, 2025</span>
-              <span id="todayWeek">Friday</span>
+              <p id="todayDate">
+                <span id="years"></span>
+                <span id="month"></span>
+                <span id="day"></span>
+              </p>
+              <span id="todayWeek"><span id="week"></span></span>
             </div>
             <div class="weather">
-              <ul class="weekList">
+              <ul id="weekList" class="weekList">
                 <li class="today">
                   <span class="weekTxt">FRI</span>
                   <div class="icon">
                     <span class="cloudy"></span>
                   </div>
-                  <div class="Celsius"><span>11</span>°C</div>
+                  <div class="Celsius"><span class="celTxt">11</span>°C</div>
                 </li>
                 <li>
                   <span class="weekTxt">SAT</span>
@@ -150,7 +154,7 @@
                     <img src="./images/weatherElement/weatherElem_sunrise.svg" alt="일출" />
                     <figcaption>Sunrise</figcaption>
                   </figure>
-                  <p>06:00</p>
+                  <p><span id="sunrise"></span></p>
                   <button class="moveBtn"><span class="txt_hidden">이동</span></button>
                 </li>
                 <li class="dragger list-group-item" draggable="true">
@@ -158,15 +162,15 @@
                     <img src="./images/weatherElement/weatherElem_sunset.svg" alt="일몰" />
                     <figcaption>Sunset</figcaption>
                   </figure>
-                  <p>18:00</p>
+                  <p><span id="sunset"></span></p>
                   <button class="moveBtn"><span class="txt_hidden">이동</span></button>
                 </li>
                 <li class="dragger list-group-item" draggable="true">
                   <figure>
                     <img src="./images/weatherElement/weatherElem_precipitation.svg" alt="강수량" />
-                    <figcaption>Precip</figcaption>
+                    <figcaption>Humidity</figcaption>
                   </figure>
-                  <p>20%</p>
+                  <p><span id="humidity"></span>%</p>
                   <button class="moveBtn"><span class="txt_hidden">이동</span></button>
                 </li>
                 <li class="dragger list-group-item" draggable="true">
@@ -174,7 +178,7 @@
                     <img src="./images/weatherElement/weatherElem_windspeed.svg" alt="풍량" />
                     <figcaption>WindSpd</figcaption>
                   </figure>
-                  <p>0.8km/hr</p>
+                  <p><span id="wind"></span>km/hr</p>
                   <button class="moveBtn"><span class="txt_hidden">이동</span></button>
                 </li>
               </ul>

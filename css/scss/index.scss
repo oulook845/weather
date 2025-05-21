@@ -131,7 +131,7 @@ $breakpoint-desktop: 1240px;
               }
             }
           }
-          label#citySearch_area {
+          #citySearch_area {
             display: flex;
             align-items: center;
             gap: 25px;
@@ -417,6 +417,7 @@ $breakpoint-desktop: 1240px;
             }
           }
           &#weatherAlerts {
+            display: none;
             padding: 20px 35px;
             .alertBox {
               max-height: 350px;
